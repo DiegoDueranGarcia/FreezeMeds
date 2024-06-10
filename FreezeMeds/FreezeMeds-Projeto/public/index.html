@@ -11,27 +11,41 @@
 
 <body>
     <div id="Inicial" class="container">
-       <div class="filtroInicial">
-        <div class="ContainerMedio">
-            <img src="./assets/SloganBranco.png" alt="">
+        <div class="filtroInicial">
+            <div class="ContainerMedio">
+                <img src="./assets/SloganBranco.png" alt="">
+            </div>
         </div>
-       </div>
     </div>
     <nav id="navbar">
         <a href="#Inicial"><img src="./assets/logoNav.png" alt=""></a>
         <ul>
-           <a href="#home"> <li>Home</li></a>
-           <a href="#funcionamento"><li>Funcionamento</li></a>
-            <a href="#equipe"><li>Equipe</li></a>
-            <a href="#simulador"><li>Simulador</li></a>
-            <a href="#contato"><li>Contato</li></a>
-            <a href="cadastro_marca.html"><li id="buton">Cadastro</li></a>
-            <a href="login2.0.html"><li id="buton">Login</li></a>
+            <a href="#home">
+                <li>Home</li>
+            </a>
+            <a href="#funcionamento">
+                <li>Funcionamento</li>
+            </a>
+            <a href="#equipe">
+                <li>Equipe</li>
+            </a>
+            <a href="#simulador">
+                <li>Simulador</li>
+            </a>
+            <a href="#contato">
+                <li>Contato</li>
+            </a>
+            <a href="cadastro_marca.html">
+                <li id="buton">Cadastro</li>
+            </a>
+            <a href="login2.0.html">
+                <li id="buton">Login</li>
+            </a>
         </ul>
     </nav>
     <div id="home" class="content">
         <div class="PrimeiraPagina">
-            <p>A FreezeMeds, está redefinindo os padrões de 
+            <p>A FreezeMeds, está redefinindo os padrões de
                 armazenamento de medicamentos sensíveis à temperatura.
                 Com tecnologia de última geração e câmaras de resfriamento desenvolvidas internamente, garantimos a
                 integridade dos medicamentos termolábeis. Navegue em nosso site e descubra como estamos moldando o
@@ -99,7 +113,7 @@
                     <div class="texto">
                         <img id="img3" src="./assets/QuemSomos/valores.png" alt="">
                         <div>
-                            <h3>valores</h3>
+                            <h3>Valores</h3>
                             <p>Prezamos pela honestidade e transparência em todas as nossas operações, agindo
                                 sempre de acordo com a lei. Comprometemo-nos a ser íntegros com nossos clientes
                                 e a manter altos padrões éticos em nossa atuação.</p>
@@ -107,10 +121,10 @@
                     </div>
                 </div>
                 <div class="TamanhoTerceira">
-                    <!-- <div class="imagem">
-<img src="" alt="">
+                    <div class="imagem">
+                        <img style="width: 100%; height: 100%;" src="./assets/equipeimg.jpg" alt="">
 
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,7 +136,7 @@
                 <h3>Simulador Financeiro</h3>
 
                 <input id="input_nome" type="text" placeholder="Nome do Usuário">
-        
+
                 <input id="input_qtdMed" type="text" placeholder="Quantidade">
 
                 <input id="input_undMed" type="text" placeholder="Preço do medicamento">
@@ -130,7 +144,7 @@
                 <button onclick="calc()">Simular</button>
             </div>
             <div id="div_msg" class="div_msg">
-   <h1>O resultado aparecera aqui</h1>
+                <h1>O resultado aparecera aqui</h1>
 
             </div>
         </div>
@@ -161,7 +175,8 @@
             </div>
             <div class="footer">
                 <div class="ConteudoFooter">
-                    <img src="./assets/Contato/png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail-removebg-preview 1.png" alt="">
+                    <img src="./assets/Contato/png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail-removebg-preview 1.png"
+                        alt="">
 
                     <img id="LogoFooter" src="./assets/logoNav.png" alt="">
 
@@ -180,19 +195,15 @@
         var nome = input_nome.value;
         var precoMed = Number(document.getElementById('input_undMed').value);
         var qtdMed = Number(document.getElementById('input_qtdMed').value);
-        var perdaFixa = 9 / 100;
+        var perdaFixa = qtdMed * 9 / 100;
         var total = qtdMed * precoMed;
-        var total1 = (qtdMed * perdaFixa) / 100;
-        var totalReal = total - total1;
-        var porcentagem = (precoMed * total1);
+        var total1 = qtdMed - perdaFixa;
 
         div_msg.innerHTML += `
         
         Olá, ${nome}. Obrigado por consultar nosso sistema de simulador financeiro,
-         com base nas informações constatadas, se tem a informação de que seu faturamento total é de R$${totalReal}
-        e a porcentagem de perda por conta de mau armazenamento dos medicamentos pode ser de até ${porcentagem.toFixed(0)}%,
-         com isso para evitar esta perda de lucro com seus produtos, adquira o nosso sistema de monitoramento de temperatura
-          de medicamentos termolábeis (Freezeway). <br><br>`;
+         com base nas informações constatadas, a quantidade de medicamentos que você perdeu
+         por conta de mau armazenamento foi de ${total1.toFixed()}% medicamentos`;
 
 
     }

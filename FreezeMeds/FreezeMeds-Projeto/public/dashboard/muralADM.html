@@ -116,7 +116,6 @@
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
                         // var btnEditar = document.createElement("button");
@@ -124,12 +123,10 @@
 
 
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + sessionStorage.NOME_USUARIO + "</b>";
+                        spanTitulo.innerHTML = "Resumo: <b>" + publicacao.titulo + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         divPublicacao.className = "publicacao";
                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
 
@@ -140,7 +137,6 @@
                         // btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
                         divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
